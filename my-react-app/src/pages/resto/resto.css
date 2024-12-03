@@ -1,0 +1,182 @@
+.hotelContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.hotelWrapper{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction :column;
+    gap: 10px;
+}
+
+.ReserveNow {
+    position: absolute;
+    top: 200px; /* Positions the button 10px below the header */
+    right: 10px; /* Positions the button 10px away from the right edge */
+    padding: 10px 20px; /* Adds padding for a better button appearance */
+    background-color: #007bff; /* Set a pleasing button background color */
+    color: white; /* Makes the text color white for contrast */
+    border: none;
+    font-weight: bold;
+    border-radius: 5px; /* Rounds the corners slightly */
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+.ReserveNow:hover {
+    background-color: #0056b3; /* Darkens the button color on hover */
+    transform: translateY(-2px); /* Slightly moves the button up on hover */
+}
+
+
+.hotelTitle{
+    font-size: 24px;
+}
+
+.hotelAddress{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hotelDistance{
+    color: #0071c2;
+    font-weight: 500;
+}
+
+.hotelPriceHighlight{
+    color: #008009;
+    font-weight: 500;
+}
+
+.hotelImages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Adds spacing between images */
+    justify-content: space-evenly; /* Distributes images evenly with equal space */
+}
+
+.hotelImgWrapper {
+    width: 22%; /* Slight adjustment for better alignment */
+    border-radius: 8px; /* Adds rounded corners */
+    overflow: hidden; /* Ensures rounded corners apply to images */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for a modern look */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adds hover effect */
+}
+
+.hotelImgWrapper:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.hotelImg {
+    width: 100%;
+    height: 200px; /* Ensures uniform image height */
+    object-fit: cover; /* Ensures images are cropped appropriately */
+}
+
+.hotelDetails{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hotelDetails{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.hotelDesc{
+  font-size: 14px;
+  margin-bottom: 20px;  
+}
+
+
+.hotelDetailsTexts{
+    flex: 3;
+}
+
+
+.hotelDetailsPrice{
+    flex: 1;
+    background-color: #ebf3ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hotelDetailsPrice>h1{
+    font-size: 18px;
+    color: #555;    
+}
+
+.hotelDetailsPrice>span{
+    font-size: 14px;
+      
+}
+
+.hotelDetailsPrice>h2{
+    font-weight: 500;
+        
+}
+.hotelDetailsPrice>button{
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px; 
+}
+
+
+.slider{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.426);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.sliderWrapper{
+    width: 100%;
+    height: 100%;display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderImg{
+    width: 80%;
+    height: 80vh;
+}
+
+.close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.arrow{
+    margin: 20px;
+    font-size: 50px;
+    color: lightgray;
+    cursor: pointer;
+}

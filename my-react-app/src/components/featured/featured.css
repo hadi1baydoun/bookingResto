@@ -1,0 +1,31 @@
+.featured {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between; /* Space out images evenly */
+    gap: 20px; /* Add consistent spacing between images */
+    z-index: 1;
+}
+
+.featuredItem{
+    position: relative;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 200px;
+}
+
+.featuredImg {
+    width: 100%; /* Makes the images flexible to fit the container */
+    max-width: 300px; /* Set a consistent width for all images */
+    height: 200px; /* Set a consistent height for all images */
+    object-fit: cover; /* Ensures images fill their container without distortion */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+.featuresTitles{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+}

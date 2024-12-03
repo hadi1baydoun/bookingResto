@@ -1,0 +1,53 @@
+.fp {
+    width: 100%;
+    max-width: 1024px;
+    display: flex; /* Arrange .fpItem horizontally */
+    justify-content: space-between; /* Distribute space between items */
+    gap: 5px; /* Space between .fpItem containers */
+}
+
+.fpItem {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    gap: 10px; /* Space between image and text */
+    flex: 1; /* Ensure all .fpItem take equal width */
+    padding: 10px;
+    border-radius: 8px;
+    align-items: center; /* Center-align content inside each .fpItem */
+    text-align: center; /* Ensure text is centered below the image */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.fpImg {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.fpName{
+    font-weight: bold;
+}
+
+.fpCity{
+    font-weight: 200;
+
+}
+
+.fpPrice{
+    font-weight: 800;
+}
+
+.fpRating>button{
+    background-color: #003580;
+    color: white;
+    border: none;
+    padding: 3px;
+    margin-right:10px ;
+    font-weight: bold;
+}
+
+.fpRating>span{
+    font-size: 14px;
+    
+}
