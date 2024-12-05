@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './resto.css';
 import Header from '../../components/header/Header.jsx';
 import Navbar from "../../components/navbar/Navbar.jsx";
@@ -7,7 +7,10 @@ import { faCircleArrowLeft, faCircleArrowRight, faCircleXmark, faLocationDot } f
 import MailList from '../../components/mailList/MailList.jsx';
 import Footer from '../../components/footer/Footer.jsx';
 import useFetch from '../../hooks/useFetch.js';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext.jsx';
+import Reserve from '../../components/reserve/Reserve.jsx';
+import { id } from 'date-fns/locale';
 
 function Resto(props) {
 
@@ -15,7 +18,10 @@ function Resto(props) {
   console.log(location)
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
-  const {data, loading, error} = useFetch(`/resto/`)
+  const [openModal, setOpenModal] = useState(false);
+  const {data, loading, error} = useFetch(`/resto/id`);
+  const {user} = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const photos = [
     { "src": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE2MjI1MjI0NDQ0MzYzMjM4Mg%3D%3D/original/ae3426d1-fba4-44d4-bed2-690426f25f7a.jpeg?im_w=1200&im_q=highq&im_format=avif" },
@@ -29,7 +35,14 @@ function Resto(props) {
     setSlideNumber(index);
     setOpen(true);
   };
+  const handleClick = () => {
+    if(user){ 
+      setOpenModal(true);
 
+    }else{
+      navigate("/login")
+    }
+  }
   return (
     <div>
       <Navbar />
@@ -85,13 +98,14 @@ function Resto(props) {
               <h2>
                 <b>15$</b> <span>per person</span>
               </h2>
-              <button>Reserve Now!</button>
+              <button onClick={handleClick}>Reserve Now!</button>
             </div>
           </div>
         </div>
         <MailList />
         <Footer />
       </div>
+      {openModal && <Reserve setOpen={setOpenModal} hotelId = {id}/>}
     </div>
   );
 }

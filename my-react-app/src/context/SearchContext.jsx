@@ -6,7 +6,7 @@ const INITIAL_STATE = {
     options: {
         adult: undefined,
         children: undefined,
-        room: undefined,
+        table: undefined,
     },
 };
 
@@ -32,4 +32,4 @@ return (
         {children}
     </SearchContext.Provider>
 )
-}
+};

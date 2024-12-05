@@ -1,7 +1,7 @@
 import express from "express";
 import Resto from "../models/Resto.js";
 import { createError } from "../utils/error.js";
-import { countByCity, countByType, createResto, deleteResto, getResto, getRestos, updateResto } from "../controllers/restos.js";
+import { countByCity, countByType, createResto, deleteResto, getResto, getRestos, getRestoTables, updateResto } from "../controllers/restos.js";
 import {verifyAdmin} from "../utils/verifyToken.js"
 const router = express.Router();
 
@@ -23,5 +23,6 @@ router.get("/", getRestos);
 router.get("/", getRestos);
 router.get("/countByCity", countByCity);
 router.get("/countByType", countByType);
+router.get("/table/:id",getRestoTables);
 
 export default router;

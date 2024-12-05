@@ -1,13 +1,15 @@
 import './searchItem.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import React from 'react'
-
-const SearchItem = () => {
+const SearchItem = ({ id }) => {
   return (
     <div className="searchItem">
-      <img src="https://i.pinimg.com/236x/86/6c/d2/866cd2867f9f2b7e6e3594fb1b8230dd.jpg" 
-      alt=""
-      className="siImg" />
+      <img
+        src="https://i.pinimg.com/236x/86/6c/d2/866cd2867f9f2b7e6e3594fb1b8230dd.jpg"
+        alt=""
+        className="siImg"
+      />
       <div className="siDesc">
         <h1 className="siTitle">Babel Restaurant</h1>
         <span className="siDistance">Zaituna Bay</span>
@@ -31,12 +33,14 @@ const SearchItem = () => {
         <div className="siDetailTexts">
           <span className="siPrice">12$</span>
           <span className="siTaxOp">Discount on Weekdays</span>
-          <button className="siCheckButton">See availabilty</button>
+          {/* Use Link to navigate to /resto/:id */}
+          <Link to={`/resto/${id}`} style={{ textDecoration: "none" }}>
+            <button className="siCheckButton">See availability</button>
+          </Link>
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SearchItem
+export default SearchItem;

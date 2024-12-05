@@ -10,6 +10,9 @@ import {
 import Home from './pages/home/Home';
 import List from './pages/list/List';
 import Resto from './pages/resto/Resto';
+import Login from './pages/login/Login.jsx';
+import Register from './pages/register/Register.jsx';
+import ReservationForm from './components/reservationForm/ReservationForm.jsx';
 
 function App() {
   return(
@@ -18,6 +21,9 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/resto" element={<List/>}/>
         <Route path="/resto/:id" element={<Resto/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/reservation" element={<ReservationForm/>} />
         
       </Routes>
     </BrowserRouter>

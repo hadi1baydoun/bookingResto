@@ -1,5 +1,5 @@
 import Resto from "../models/Resto.js";
-
+import Tables from './../models/Tables.js'
 
 export const createResto = async (req, res, next) =>{
     const newResto = new Resto(req.body);
@@ -89,3 +89,17 @@ export const countByType = async (req, res, next) => {
         next(err);
     }
 };
+
+
+export const getRestoTables = async (req, res, next) => {
+    try{
+        const resto = Resto.findById(req.params.id)
+        const list = await Promise.all(resto.tables.map(table=>{
+            return Tables.findById(table);
+        })
+    );
+        res.status(200).json(list)
+    }catch(err){
+        next(err)
+    }
+}
