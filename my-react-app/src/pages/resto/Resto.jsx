@@ -13,15 +13,14 @@ import Reserve from '../../components/reserve/Reserve.jsx';
 import { id } from 'date-fns/locale';
 
 function Resto(props) {
-
   const location = useLocation()
   console.log(location)
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  const {data, loading, error} = useFetch(`/resto/id`);
-  const {user} = useContext(AuthContext);
-  const navigate = useNavigate()
+  const { data, loading, error } = useFetch(`/resto/:id`);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const photos = [
     { "src": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTE2MjI1MjI0NDQ0MzYzMjM4Mg%3D%3D/original/ae3426d1-fba4-44d4-bed2-690426f25f7a.jpeg?im_w=1200&im_q=highq&im_format=avif" },
@@ -35,14 +34,16 @@ function Resto(props) {
     setSlideNumber(index);
     setOpen(true);
   };
-  const handleClick = () => {
-    if(user){ 
-      setOpenModal(true);
 
-    }else{
-      navigate("/login")
+  const handleClick = () => {
+    if (user) {
+      // Navigate to the ReservationForm page
+      navigate("/reservation");
+    } else {
+      navigate("/login");
     }
-  }
+  };
+
   return (
     <div>
       <Navbar />
@@ -66,7 +67,7 @@ function Resto(props) {
         )}
         <div className="hotelWrapper">
           <button className="ReserveNow">Reserve Now !</button>
-          <h1 className="hotelTitle">Babel Restaurant</h1>
+          <h1 className="hotelTitle">The Happy Prince</h1>
           <div className="hotelAddress">
             <FontAwesomeIcon icon={faLocationDot} />
             <span>Zaituna Bay</span>
@@ -84,7 +85,7 @@ function Resto(props) {
             <div className="hotelDetailsTexts">
               <h1 className="hotelTitle">In the heart of Beirut</h1>
               <p className="hotelDesc">
-                Babel Restaurant offers a unique dining experience that blends traditional
+                The Happy Prince Restaurant offers a unique dining experience that blends traditional
                 flavors with modern twists. Our menu features a diverse range of
                 Mediterranean-inspired dishes, made from the freshest locally sourced ingredients.
                 Whether you're here for a casual meal or a special celebration, Babel promises a
@@ -105,7 +106,6 @@ function Resto(props) {
         <MailList />
         <Footer />
       </div>
-      {openModal && <Reserve setOpen={setOpenModal} hotelId = {id}/>}
     </div>
   );
 }

@@ -68,6 +68,9 @@ const Login = () => {
                     </button>
                 </form>
                 {errorMessage && <p className="error">{errorMessage}</p>}
+                <p className="register-prompt">
+                    Don't have an account? <a href="/register">Register now</a>
+                </p>
             </div>
         </div>
     );

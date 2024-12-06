@@ -1,23 +1,29 @@
 import useFetch from '../../hooks/useFetch'
 import './featuredProperties.css'
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function FeaturedProperties() {
 
     const {data, loading, error} = useFetch("/resto/?featured=true&limit=4");
   return (
     <div className='fp'>
-        <div className="fpItem">
-        <img src="https://ucarecdn.com/b19837ea-bc6f-4683-a999-355a1552fad1/-/scale_crop/870x500/" 
-        alt="" 
-        className="fpImg" />
+        <div  className="fpItem" 
+              style={{ color: 'none', textDecoration: 'none' }}>
+        <Link to="/resto/123" className="fpItem">
+        <img 
+          src="https://ucarecdn.com/b19837ea-bc6f-4683-a999-355a1552fad1/-/scale_crop/870x500/" 
+          alt="" 
+          className="fpImg" 
+        />
         <span className="fpName">The Happy Prince </span>
         <span className="fpCity">Mar Mkhael</span>
         <span className="fpPrice">Starting from 20$</span>
         <div className="fpRating">
-            <button>9.2</button>
-            <span>Excellent</span>
+          <button>9.2</button>
+          <span>Excellent</span>
         </div>
+      </Link>
         </div>
         <div className="fpItem">
         <img src="https://ucarecdn.com/d0222ba3-7f19-4a1e-bf83-0bf66392aa09/-/scale_crop/870x500/" 
